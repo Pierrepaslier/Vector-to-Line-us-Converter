@@ -3,9 +3,9 @@ It's WIP, feel free to contribute to the code.
 
 # PREREQUISITE
 
-[Line Us Desktop version] (https://www.line-us.com/software.html)
+[Line Us Desktop version](https://www.line-us.com/software.html)
 
-[Inkspace] (https://inkscape.org/)
+[Inkspace](https://inkscape.org/)
 
 
 # HOW TO PREPARE A FILE FROM AI
@@ -14,7 +14,7 @@ Open a vector file or create a new Adobe Illustrator document.
 
 Save your file as .ai
 
-Open your .ai file with [Inkspace] (https://inkscape.org/)
+Open your .ai file with [Inkspace](https://inkscape.org/)
 
 Save as a .plt file (HP Graphics Language Plot file AutoCAD)
 
@@ -52,8 +52,8 @@ Voila
 
 # ADDITIONAL LINKS
 
-Check out the excellent [Inkscape extension] for Line-us developed by Anatoly Besplemennov (https://github.com/Line-us/Inkscape-Plugin)
+Check out the excellent [Inkscape extension](https://github.com/Line-us/Inkscape-Plugin) for Line-us developed by Anatoly Besplemennov 
 
-General Line Us [git] (https://github.com/Line-us)
+General Line Us [git](https://github.com/Line-us)
 
 
