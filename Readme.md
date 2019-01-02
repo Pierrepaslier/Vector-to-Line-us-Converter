@@ -1,4 +1,5 @@
-This script allows you to convert pretty much any vector file into a native Line Us drawing. 
+This script allows you to convert pretty much any vector file into a native Line Us drawing. Main advantage is that you can save the drawings inside the native app to share, draw on the go... 
+It's WIP, feel free to contribute to the code. 
 
 # PREREQUISITE
 
@@ -48,4 +49,11 @@ Open Line Us App.
 Your drawing should be in your local "book". Resize and move around to fit your page.
 
 Voila
+
+# ADDITIONAL LINKS
+
+Check out the excellent [Inkscape extension] for Line-us developed by Anatoly Besplemennov (https://github.com/Line-us/Inkscape-Plugin)
+
+General Line Us [git] (https://github.com/Line-us)
+
 
