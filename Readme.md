@@ -24,17 +24,17 @@ Download the php script on your computer.
 
 On Mac, launch the terminal. 
 
-Type in "php " (with a space). 
+Type in `php ` (with a space). 
 
 Drag and drop the file "Vector to Lus Converter.php" to your terminal window. 
 
 Drag and drop your .plt file to the terminal window. 
 
-Hit Enter. 
+Hit `Enter`. 
 
-Copy paste the code that is being computed. (you can use Cmd + A to select, Cmd + C to copy)
+Copy paste the code that is being computed. (you can use `Cmd + A` to select, `Cmd + C` to copy)
 
-Find your LineUs folder under /Documents/LineUsFiles/
+Find your LineUs folder under `/Documents/LineUsFiles/`
 
 Duplicate the latest .txt file and give it a new number (if latest was 0000027.txt, rename it 0000028.txt)
 
