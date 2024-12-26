@@ -1,6 +1,21 @@
-import sys
 import os
 import re
+import sys
+
+LINEUS_DIR = "/Users/sylvain/Documents/LineUsFiles"  # Default Line-us directory
+
+
+def generate_new_filename(output_dir):
+    """
+    Generate the next sequential filename in the Line-us folder.
+    """
+    files = [f for f in os.listdir(output_dir) if f.endswith(".txt")]
+    highest_number = 0
+    for file in files:
+        match = re.search(r"(\d+)\.txt$", file)
+        if match:
+            highest_number = max(highest_number, int(match.group(1)))
+    return os.path.join(output_dir, f"{highest_number + 1:08d}.txt")
 
 
 def parse_hpgl_to_lineus(input_file, output_file):
@@ -11,12 +26,11 @@ def parse_hpgl_to_lineus(input_file, output_file):
     input_file (str): Path to the HPGL input file.
     output_file (str): Path to the Line-us output file.
     """
-    # Open the input and output files
     with open(input_file, "r") as infile, open(output_file, "w") as outfile:
         # Write the Line-us header
         outfile.write("G54 X0 Y0 S1\n")
 
-        # Read and process each line from the HPGL file
+        # Process each line in the HPGL file
         for line in infile:
             commands = line.strip().split(";")
             for command in commands:
@@ -27,7 +41,6 @@ def parse_hpgl_to_lineus(input_file, output_file):
                 cmd_type = command[:2]
                 params = command[2:].strip()
 
-                # Process pen up (PU) or pen down (PD) commands
                 if cmd_type in ("PU", "PD"):
                     try:
                         coords = params.split(",")
@@ -53,16 +66,22 @@ def parse_hpgl_to_lineus(input_file, output_file):
 
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python3 hpgl_to_lineus.py <input.hpgl> <output.txt>")
+    if len(sys.argv) != 2:
+        print("Usage: python3 hpgl_to_lineus.py <input.hpgl>")
         sys.exit(1)
 
     input_file = sys.argv[1]
-    output_file = sys.argv[2]
 
     if not os.path.isfile(input_file):
         print(f"Error: Input file '{input_file}' does not exist.")
         sys.exit(1)
+
+    if not os.path.isdir(LINEUS_DIR):
+        print(f"Error: Output directory '{LINEUS_DIR}' does not exist.")
+        sys.exit(1)
+
+    # Generate the new filename
+    output_file = generate_new_filename(LINEUS_DIR)
 
     try:
         parse_hpgl_to_lineus(input_file, output_file)
